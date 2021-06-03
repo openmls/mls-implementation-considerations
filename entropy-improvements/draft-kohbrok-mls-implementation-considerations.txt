@@ -67,6 +67,7 @@ Table of Contents
      3.1.  Improving Resiliance to Poor Random Number Generators
        3.1.1.  Entropy Pool Security
        3.1.2.  Entropy Pool Operations
+       3.1.3.  External Entropy Sources
    4.  IANA Considerations
    5.  Normative References
    Acknowledgments
@@ -91,7 +92,7 @@ Table of Contents
    The security of a group hinges on every member having access to a
    good source of entropy.  To make the protocol more robust in
    environments with only weak, intermitent (or even no) external
-   sources of entropy, each MLS client MUST maintain a persistant
+   sources of entropy, each MLS client SHOULD maintain a persistant
    "entropy_pool" value which is initialized to a uniform random octet
    string (e.g. using the operating system's Random Number Generator
    (RNG)) of length "KDF.Nh", where "KDF" is the KDF supported by the
@@ -198,6 +199,17 @@ internal_entropy =
    MLS clients SHOULD inject "internal_entropy" whenever processing an
    update from another party in any of their groups.
 
+3.1.3.  External Entropy Sources
+
+   The OS' RNG is the primary source for fresh entropy for injection
+   into the entropy pool and MUST be used whenever a "fresh_value" is
+   retrieved.  However, the entropy pool can benefit from other external
+   sources as well.  For example, [RFC8937] proposes the injection of
+   the function of a party's long term key into the entropy pool.
+   Similarly, exported keys from other cryptographic security protocols
+   such as TLS can be leveraged to improve the quality of the overall
+   entropy in the pool.
+
 4.  IANA Considerations
 
    This document has no IANA actions.
@@ -212,6 +224,11 @@ internal_entropy =
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://datatracker.ietf.org/doc/html/rfc8174>.
+
+   [RFC8937]  Cremers, C., Garratt, L., Smyshlyaev, S., Sullivan, N.,
+              and C. Wood, "Randomness Improvements for Security
+              Protocols", RFC 8937, DOI 10.17487/RFC8937, October 2020,
+              <https://datatracker.ietf.org/doc/html/rfc8937>.
 
 Acknowledgments
 
