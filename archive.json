@@ -1,7 +1,7 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-03T01:12:13.066231+00:00",
-  "repo": "kkohbrok/mls-implementations",
+  "timestamp": "2021-06-06T00:41:06.554830+00:00",
+  "repo": "kkohbrok/mls-implementation-considerations",
   "labels": [
     {
       "name": "bug",
@@ -50,5 +50,34 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjYwODIyMjc2",
+      "title": "An entropy pool design for MLS",
+      "url": "https://github.com/kkohbrok/mls-implementation-considerations/pull/1",
+      "state": "OPEN",
+      "author": "kkohbrok",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "kkohbrok"
+      ],
+      "labels": [],
+      "body": "This PR is based on the changes introduced in https://github.com/mlswg/mls-protocol/pull/467 and is joint work with @psyoptix.",
+      "createdAt": "2021-06-03T11:21:31Z",
+      "updatedAt": "2021-06-03T11:42:13Z",
+      "baseRepository": "kkohbrok/mls-implementation-considerations",
+      "baseRefName": "main",
+      "baseRefOid": "3132de52b407fbe08b0c1647227920e445ea4f1a",
+      "headRepository": "kkohbrok/mls-implementation-considerations",
+      "headRefName": "konrad/entropy-improvements",
+      "headRefOid": "1e8dae761289e760d678201162d04a3669acf0e5",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
